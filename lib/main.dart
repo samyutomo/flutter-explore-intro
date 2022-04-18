@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_explore_intro/portfolio_screen.dart';
 
 void main() {
   runApp(const XplorApp());
@@ -14,15 +15,7 @@ class XplorApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(
           colorScheme:
               ColorScheme.fromSwatch().copyWith(primary: Colors.deepPurple)),
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Center(child: Text("Exploration Design")),
-          ),
-          body: Center(
-              child: Text(
-            "This app is being built by Flutter framework",
-            style: Theme.of(context).textTheme.bodyLarge,
-          ))),
+      home: const PortfolioScreen()
     );
   }
 }
