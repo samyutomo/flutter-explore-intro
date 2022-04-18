@@ -11,41 +11,42 @@ class CardDetails extends StatelessWidget {
         Expanded(
             flex: 1,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "experience",
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .bodyText2,),
-                const SizedBox(height: 12,),
-                Text("1 Month",
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .bodyText2,)
+                  "Experience",
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Text(
+                  "1 Month",
+                  style: Theme.of(context).textTheme.bodyText2,
+                )
               ],
             )),
         Expanded(
+            flex: 1,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("material",
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .bodyText2,),
-                const SizedBox(height: 12,),
-                Text("Flutter 2, Dart, Widgets, User Interface, Github",
+                Text(
+                  "Material",
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Text(
+                  "Flutter 2, Dart, Widgets, User Interface, Github, Android Studio, Windows",
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .bodyText2,)
+                  style: Theme.of(context).textTheme.bodyText2,
+                )
               ],
             ))
       ],
     );
   }
-
 }
