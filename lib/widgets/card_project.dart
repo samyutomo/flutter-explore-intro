@@ -47,8 +47,7 @@ class _CardProjectState extends State<CardProject> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: CachedNetworkImage(
-                imageUrl:
-                    'https://i.natgeofe.com/n/affec7b0-50e5-416b-aa4d-50aabba73afa/arctic-fox_thumb_3x4.JPG',
+                imageUrl: 'https://cdn.hswstatic.com/gif/arctic-fox-1.jpg',
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,

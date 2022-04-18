@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_explore_intro/portfolio_details_screen.dart';
 import 'package:flutter_explore_intro/widgets/card_details.dart';
 import 'package:flutter_explore_intro/widgets/icon_with_text.dart';
 
@@ -42,10 +43,11 @@ class CardPortfolio extends StatelessWidget {
               )),
               ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: builder))
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const PortfolioDetailsScreen()));
                   },
                   child: const Text("See Works"))
             ],
