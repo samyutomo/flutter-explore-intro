@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_explore_intro/widgets/icon_with_text.dart';
 
 class CardProject extends StatefulWidget {
   const CardProject({Key? key}) : super(key: key);
@@ -14,23 +15,23 @@ class _CardProjectState extends State<CardProject> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(8)),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Project",
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.headline6,
           ),
           const SizedBox(
-            height: 16,
+            height: 8,
           ),
           Text(
             "Flutter Exploration App",
-            style: Theme.of(context)
-                .textTheme
-                .subtitle1
-                ?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                color: Colors.deepPurple, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 8,
@@ -40,14 +41,15 @@ class _CardProjectState extends State<CardProject> {
             style: Theme.of(context).textTheme.bodyText2,
           ),
           const SizedBox(
-            height: 8,
+            height: 16,
           ),
           AspectRatio(
-            aspectRatio: 3 / 1,
+            aspectRatio: 2 / 1,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: CachedNetworkImage(
-                imageUrl: 'https://cdn.hswstatic.com/gif/arctic-fox-1.jpg',
+                imageUrl:
+                    'https://www.discoverimages.com/p/251/arctic-fox-alopex-lagopus-billenfjorden-19350208.jpg',
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,
@@ -64,7 +66,7 @@ class _CardProjectState extends State<CardProject> {
             style: Theme.of(context).textTheme.bodyText2,
           ),
           const SizedBox(
-            height: 16,
+            height: 10,
           ),
           GestureDetector(
             onTap: () {
@@ -72,15 +74,15 @@ class _CardProjectState extends State<CardProject> {
                 isShowMore = !isShowMore;
               });
             },
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                isShowMore ? "- Show Less" : "+ Show More",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                isShowMore
+                    ? const IconWithText(
+                        iconData: Icons.arrow_drop_up, text: "Show Less")
+                    : const IconWithText(
+                        iconData: Icons.arrow_drop_down, text: "Show More"),
+              ],
             ),
           )
         ],

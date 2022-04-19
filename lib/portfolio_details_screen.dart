@@ -9,13 +9,14 @@ class PortfolioDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("My Portfolio"),
       ),
       body: Stack(
         children: [
           CachedNetworkImage(
             imageUrl:
-                'https://www.discoverimages.com/p/251/arctic-fox-alopex-lagopus-billenfjorden-19350208.jpg',
+                'https://w0.peakpx.com/wallpaper/292/198/HD-wallpaper-arctic-fox-white-snow-animal-thumbnail.jpg',
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.cover,
@@ -23,12 +24,9 @@ class PortfolioDetailsScreen extends StatelessWidget {
             colorBlendMode: BlendMode.saturation,
           ),
           ListView.separated(
-              itemBuilder: (context, index) {
-                return const CardProject();
-              },
-              separatorBuilder: (context, index) => const SizedBox(
-                    height: 16,
-                  ),
+              padding: const EdgeInsets.all(16),
+              itemBuilder: (context, index) => const CardProject(),
+              separatorBuilder: (context, index) => const SizedBox(height: 25),
               itemCount: 6)
         ],
       ),
