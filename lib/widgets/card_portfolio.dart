@@ -16,7 +16,7 @@ class CardPortfolio extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Samy Utomo",
+            "Arctic Fox",
             style: Theme.of(context)
                 .textTheme
                 .headline5
@@ -31,14 +31,14 @@ class CardPortfolio extends StatelessWidget {
                   child: Column(
                 children: const [
                   IconWithText(
-                      iconData: Icons.work_outline_rounded,
-                      text: "Flutter Explorer"),
+                      iconData: Icons.alternate_email,
+                      text: "White Fox, Polar Fox, Snow Fox"),
                   SizedBox(
                     height: 12,
                   ),
                   IconWithText(
-                      iconData: Icons.email_outlined,
-                      text: "dev.samyutomo@gmail.com")
+                      iconData: Icons.ac_unit_outlined,
+                      text: "Arctic Tundra habitat")
                 ],
               )),
               ElevatedButton(
@@ -49,7 +49,7 @@ class CardPortfolio extends StatelessWidget {
                             builder: (context) =>
                                 const PortfolioDetailsScreen()));
                   },
-                  child: const Text("See Works"))
+                  child: const Text("See More"))
             ],
           ),
           const SizedBox(

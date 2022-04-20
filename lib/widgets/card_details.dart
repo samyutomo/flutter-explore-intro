@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class CardDetails extends StatelessWidget {
+class CardDetails extends StatefulWidget {
   const CardDetails({Key? key}) : super(key: key);
+
+  @override
+  State<CardDetails> createState() => _CardDetails();
+}
+
+class _CardDetails extends State<CardDetails> {
+  bool isShowText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +21,14 @@ class CardDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Experience",
+                  "Age",
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 const SizedBox(
                   height: 12,
                 ),
                 Text(
-                  "1 Month",
+                  "Up to 11 Years",
                   style: Theme.of(context).textTheme.bodyText2,
                 )
               ],
@@ -32,18 +39,24 @@ class CardDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Material",
+                  "Food",
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 const SizedBox(
                   height: 12,
                 ),
-                Text(
-                  "Flutter 2, Dart, Widgets, User Interface, Github, Android Studio, Windows",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodyText2,
-                )
+                GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        isShowText = !isShowText;
+                      });
+                    },
+                    child: Text(
+                      "Lemmings, voles, rodents, hares, birds, eggs, fish, carrion and in time of scarcity also eat their feces.",
+                      maxLines: isShowText ? 2 : 6,
+                      overflow: isShowText ? TextOverflow.ellipsis : TextOverflow.fade,
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ))
               ],
             ))
       ],

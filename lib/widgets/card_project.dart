@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_explore_intro/widgets/icon_with_text.dart';
 
 class CardProject extends StatefulWidget {
   const CardProject({Key? key}) : super(key: key);
@@ -22,24 +21,26 @@ class _CardProjectState extends State<CardProject> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Project",
+            "Animalpedia",
             style: Theme.of(context).textTheme.headline6,
           ),
           const SizedBox(
             height: 8,
           ),
           Text(
-            "Flutter Exploration App",
+            "Arctic Fox (Vulpes Lagopus)",
             style: Theme.of(context).textTheme.subtitle1?.copyWith(
                 color: Colors.deepPurple, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
-            height: 8,
+            height: 20,
           ),
-          Text(
-            "Introduction",
-            style: Theme.of(context).textTheme.bodyText2,
-          ),
+          Container(
+              alignment: Alignment.center,
+              child: Text(
+                "Information",
+                style: Theme.of(context).textTheme.titleMedium,
+              )),
           const SizedBox(
             height: 16,
           ),
@@ -74,16 +75,38 @@ class _CardProjectState extends State<CardProject> {
                 isShowMore = !isShowMore;
               });
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                isShowMore
-                    ? const IconWithText(
-                        iconData: Icons.arrow_drop_up, text: "Show Less")
-                    : const IconWithText(
-                        iconData: Icons.arrow_drop_down, text: "Show More"),
-              ],
-            ),
+            child: Container(
+                padding: const EdgeInsets.only(right: 5),
+                child: isShowMore
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: const [
+                          Icon(
+                            Icons.arrow_drop_up,
+                            color: Colors.deepPurple,
+                          ),
+                          Text(
+                            "Show Less",
+                            style: TextStyle(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: const [
+                            Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.green,
+                            ),
+                            Text(
+                              "Show More",
+                              style: TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ])),
           )
         ],
       ),
